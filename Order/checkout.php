@@ -21,11 +21,24 @@ $cart_items = $stmt->fetchAll();
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-image: url(./checkout.png);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;        
         }
 
         .container {
             padding-top: 20px;
+        }
+
+            .table-container {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.7);
         }
 
         .btn-confirm {
@@ -36,6 +49,7 @@ $cart_items = $stmt->fetchAll();
 
 <body>
     <div class="container mt-5">
+        <div class="table-container">
         <h1 class="mb-4">Checkout</h1>
         <table class="table">
             <thead>
@@ -50,22 +64,26 @@ $cart_items = $stmt->fetchAll();
                 <?php foreach ($cart_items as $item): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($item['name']); ?></td>
-                        <td><?php echo number_format($item['price'], 2, ',', '.'); ?> USD</td>
+                        <td>Rp<?php echo number_format($item['price'], 2, ',', '.'); ?></td>
                         <td><?php echo htmlspecialchars($item['quantity']); ?></td>
-                        <td><?php echo number_format($item['price'] * $item['quantity'], 2, ',', '.'); ?> USD</td>
+                        <td>Rp<?php echo number_format($item['price'] * $item['quantity'], 2, ',', '.'); ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <h3>Total: <?php
+        <h3>Total: Rp<?php
         $total = 0;
         foreach ($cart_items as $item) {
             $total += $item['price'] * $item['quantity'];
         }
-        echo number_format($total, 2, ',', '.'); ?> USD
+        echo number_format($total, 2, ',', '.'); ?>
         </h3>
-        <a href="confirm_checkout.php" class="btn btn-primary btn-confirm">Confirm Purchase</a>
-        <a href="cart.php" class="btn btn-secondary">Back to Cart</a>
+        <form action="confirm_checkout.php" method="POST">
+            <input type="hidden" name="total" value="<?php echo $total; ?>">
+            <button type="submit" class="btn btn-primary btn-confirm">Confirm Purchase</button>
+            <a href="cart.php" class="btn btn-secondary">Back to Cart</a>
+        </form>
+        </div>
     </div>
 </body>
 

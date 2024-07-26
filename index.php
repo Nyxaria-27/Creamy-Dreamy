@@ -24,112 +24,7 @@ $products = $stmt->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Shop</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-image: url("bg.jpg");
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: #ffffff;
-            /* Set text color to white */
-        }
-
-        .bg-image {
-            background-image: url("bg.jpg");
-            filter: blur(8px);
-            -webkit-filter: blur(8px);
-            position: center;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            padding-top: 20px;
-            z-index: 1;
-            position: relative;
-        }
-
-        .card {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-            background-color: rgba(255, 255, 255, 0.9);
-            /* Card background color */
-            color: #333333;
-            /* Card text color */
-            margin-bottom: 20px;
-            border-radius: 25px;
-        }
-
-        .card img {
-            border-radius: 25px;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-title {
-            color: #333333;
-            /* Card title color */
-            font-weight: bold;
-        }
-
-        .card-text {
-            color: #666666;
-            /* Card text color */
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            /* Primary button background color */
-            border-color: #007bff;
-            /* Primary button border color */
-        }
-
-        .btn-primary:hover {
-            background-color: #0069d9;
-            /* Primary button hover background color */
-            border-color: #0062cc;
-            /* Primary button hover border color */
-        }
-
-        .btn-secondary {
-            background-color: #6c757d;
-            /* Secondary button background color */
-            border-color: #6c757d;
-            /* Secondary button border color */
-        }
-
-        .btn-secondary:hover {
-            background-color: #5a6268;
-            /* Secondary button hover background color */
-            border-color: #545b62;
-            /* Secondary button hover border color */
-        }
-
-        .navbar-brand,
-        .nav-link {
-            color: #333 !important;
-        }
-
-        .nav-link:hover {
-            color: #007bff !important;
-        }
-
-        .container h1 {
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -165,6 +60,13 @@ $products = $stmt->fetchAll();
         </div>
     </nav>
 
+    <section id="Home">
+        <main>
+            
+        </main>
+    </section>
+
+
     <div class="container mt-5">
         <h1 class="mb-4 text-center">Our Products</h1>
         <div class="row">
@@ -188,6 +90,20 @@ $products = $stmt->fetchAll();
             <a href="Order/cart.php" class="btn btn-secondary">View Cart</a>
         </div>
     </div>
+
+    <footer>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+            <div class="footer-links">
+                <a href="#about-me">About Me</a>
+                <a href="#my-interests">My Interests</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2024 By Dwi Wahyu Ramadhan <br> All Rights Reserved.</p>
+        </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
